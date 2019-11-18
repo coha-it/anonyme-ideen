@@ -11,7 +11,7 @@
     <div id="app">
 
         <div class="paper container">
-            <h1>Some Fresh Title</h1>
+            <h1>Anonyme Ideen</h1>
             <form class="form-group" @submit.prevent="submitForm">
                 <div class="row flex-edges">
                     <div class="xs-12 sm-12 md-6 lg-6 col-6">

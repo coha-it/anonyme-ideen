@@ -1,1 +1,18 @@
-@import 'node_modules/papercss/src/styles'
+@import 'node_modules/papercss/src/styles';
+
+h1:first-of-type {
+    margin: 0;
+}
+
+.container {
+    max-width: 1080px;
+
+    &.paper {
+        margin: 15px auto;
+    }
+}
+
+.form-group textarea {
+    font-size: 30px !important;
+    letter-spacing: .041em;
+}

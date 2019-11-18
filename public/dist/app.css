@@ -3097,3 +3097,20 @@ nav .collapsible > button {
   }
 }
 
+h1:first-of-type {
+  margin: 0;
+}
+
+.container {
+  max-width: 1080px;
+}
+
+.container.paper {
+  margin: 15px auto;
+}
+
+.form-group textarea {
+  font-size: 30px !important;
+  letter-spacing: .041em;
+}
+
