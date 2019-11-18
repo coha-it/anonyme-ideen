@@ -14347,7 +14347,7 @@ new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
     checkIdeas: function checkIdeas() {
       var _t = this;
 
-      axios__WEBPACK_IMPORTED_MODULE_1___default.a.post('/api/last-idea-date', this.form.lastIdeaDate).then(function (res) {
+      axios__WEBPACK_IMPORTED_MODULE_1___default.a.post('api/last-idea-date', this.form.lastIdeaDate).then(function (res) {
         // If Changes!
         if (res.data != _t.lastIdeaDate) _t.getIdeas(); // Set Date
 
@@ -14357,7 +14357,7 @@ new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
     checkCategories: function checkCategories() {
       var _t = this;
 
-      axios__WEBPACK_IMPORTED_MODULE_1___default.a.post('/api/last-category-date', this.form.lastCategoryDate).then(function (res) {
+      axios__WEBPACK_IMPORTED_MODULE_1___default.a.post('api/last-category-date', this.form.lastCategoryDate).then(function (res) {
         // If Changes!
         if (res.data != _t.lastCategoryDate) _t.getCategories(); // Set Date
 
@@ -14367,14 +14367,14 @@ new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
     getIdeas: function getIdeas() {
       var _t = this;
 
-      axios__WEBPACK_IMPORTED_MODULE_1___default.a.get('/api/ideas').then(function (res) {
+      axios__WEBPACK_IMPORTED_MODULE_1___default.a.get('api/ideas').then(function (res) {
         _t.ideas = res.data;
       });
     },
     getCategories: function getCategories() {
       var _t = this;
 
-      axios__WEBPACK_IMPORTED_MODULE_1___default.a.get('/api/categories').then(function (res) {
+      axios__WEBPACK_IMPORTED_MODULE_1___default.a.get('api/categories').then(function (res) {
         _t.categories = res.data;
       });
     },
@@ -14394,7 +14394,7 @@ new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
     submitForm: function submitForm() {
       var _t = this;
 
-      axios__WEBPACK_IMPORTED_MODULE_1___default.a.post('/api/create-idea', this.form).then(function (res) {
+      axios__WEBPACK_IMPORTED_MODULE_1___default.a.post('api/create-idea', this.form).then(function (res) {
         // Success
         _t.setSuccess();
 

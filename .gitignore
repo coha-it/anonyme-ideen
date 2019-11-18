@@ -7,3 +7,4 @@ Homestead.yaml
 /node_modules
 *.sqlite
 
+public/dist/*
