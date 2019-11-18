@@ -13,13 +13,13 @@
             <h1>Anonyme Ideen</h1>
             <form class="form-group" @submit.prevent="submitForm">
                 <div class="row flex-edges">
-                    <div class="xs-12 sm-12 md-6 lg-6 col-6">
+                    <div class="col-12 xs-12 sm-12 md-6 lg-6 xl-6">
                         <div class="form-group">
                         <label>Deine anonyme Idee</label>
                         <textarea v-model="form.idea" name="idea" style="width: 100%; height: 105px;" placeholder="Irgend ein Satz, Text, Spruch oder sonstwas"></textarea>
                         </div>
                     </div>
-                    <div class="xs-12  sm-12 md-5 lg-5 col-5">
+                    <div class="col-12 xs-12  sm-12 md-5 lg-5 xl-5">
                             <legend>Kategorie(n)</legend>
                             <template v-for="category in categories">
                                 <label :for="form.categories[category.id]" class="paper-check">
@@ -27,7 +27,7 @@
                                 </label>
                             </template>
                     </div>
-                    <div class="xs-12 sm-12 md-12 lg-12 col-2">
+                    <div class="col-12 xs-12 sm-12 md-12 lg-12 xl-12">
                         <button>Absenden!</button>
                     </div>
                 </div>
