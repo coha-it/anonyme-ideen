@@ -16,3 +16,15 @@
 // });
 
 $router->get('/', 'IdeenController@index');
+
+// API
+$router->group(['prefix' => 'api'], function () use ($router) {
+    // GET
+    $router->get('ideas', 'IdeenController@ideas');
+    $router->get('categories', 'IdeenController@categories');
+
+    // POST
+    $router->post('create/idea', 'IdeenController@createIdea');
+});
+
+
