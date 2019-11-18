@@ -15,16 +15,18 @@
 //     return $router->app->version();
 // });
 
-$router->get('/', 'IdeenController@index');
+$router->get('/', 'IdeaController@index');
 
 // API
 $router->group(['prefix' => 'api'], function () use ($router) {
     // GET
-    $router->get('ideas', 'IdeenController@ideas');
-    $router->get('categories', 'IdeenController@categories');
+    $router->post('last-idea-date', 'IdeaController@lastIdeaDate');
+    $router->post('last-category-date', 'IdeaController@lastCategoryDate');
+    $router->get('ideas', 'IdeaController@ideas');
+    $router->get('categories', 'IdeaController@categories');
 
     // POST
-    $router->post('create/idea', 'IdeenController@createIdea');
+    $router->post('create-idea', 'IdeaController@createIdea');
 });
 
 

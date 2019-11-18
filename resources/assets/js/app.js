@@ -6,7 +6,11 @@ new Vue({
     delimiters: ['{(', ')}'],
     data: {
         ideas: [],
+        lastIdeaDate: '',
+
         categories: [],
+        lastCategoryDate: '',
+
         form: {
             categories: []
         },
@@ -14,6 +18,32 @@ new Vue({
         error: false,
     },
     methods: {
+        checkIdeas: function() {
+            var _t = this;
+
+            axios
+                .post('/api/last-idea-date', this.form.lastIdeaDate)
+                .then(function (res) {
+                    // If Changes!
+                    if (res.data != _t.lastIdeaDate) _t.getIdeas();
+
+                    // Set Date
+                    _t.lastIdeaDate = res.data;
+                });
+        },
+        checkCategories: function() {
+            var _t = this;
+
+            axios
+                .post('/api/last-category-date', this.form.lastCategoryDate)
+                .then(function (res) {
+                    // If Changes!
+                    if (res.data != _t.lastCategoryDate) _t.getCategories();
+
+                    // Set Date
+                    _t.lastCategoryDate = res.data;
+                });
+        },
         getIdeas: function () {
             var _t = this;
 
@@ -49,7 +79,7 @@ new Vue({
             var _t = this;
 
             axios
-                .post('/api/create/idea', this.form)
+                .post('/api/create-idea', this.form)
                 .then(function(res) {
                     // Success
                     _t.setSuccess();
@@ -64,8 +94,8 @@ new Vue({
         loop: function() {
             var _t = this;
 
-            this.getIdeas();
-            this.getCategories();
+            this.checkIdeas();
+            this.checkCategories();
 
             setTimeout( function() {
                 _t.loop();

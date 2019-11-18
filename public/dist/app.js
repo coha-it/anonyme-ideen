@@ -14334,7 +14334,9 @@ new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
   delimiters: ['{(', ')}'],
   data: {
     ideas: [],
+    lastIdeaDate: '',
     categories: [],
+    lastCategoryDate: '',
     form: {
       categories: []
     },
@@ -14342,6 +14344,26 @@ new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
     error: false
   },
   methods: {
+    checkIdeas: function checkIdeas() {
+      var _t = this;
+
+      axios__WEBPACK_IMPORTED_MODULE_1___default.a.post('/api/last-idea-date', this.form.lastIdeaDate).then(function (res) {
+        // If Changes!
+        if (res.data != _t.lastIdeaDate) _t.getIdeas(); // Set Date
+
+        _t.lastIdeaDate = res.data;
+      });
+    },
+    checkCategories: function checkCategories() {
+      var _t = this;
+
+      axios__WEBPACK_IMPORTED_MODULE_1___default.a.post('/api/last-category-date', this.form.lastCategoryDate).then(function (res) {
+        // If Changes!
+        if (res.data != _t.lastCategoryDate) _t.getCategories(); // Set Date
+
+        _t.lastCategoryDate = res.data;
+      });
+    },
     getIdeas: function getIdeas() {
       var _t = this;
 
@@ -14372,7 +14394,7 @@ new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
     submitForm: function submitForm() {
       var _t = this;
 
-      axios__WEBPACK_IMPORTED_MODULE_1___default.a.post('/api/create/idea', this.form).then(function (res) {
+      axios__WEBPACK_IMPORTED_MODULE_1___default.a.post('/api/create-idea', this.form).then(function (res) {
         // Success
         _t.setSuccess();
 
@@ -14389,8 +14411,8 @@ new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
     loop: function loop() {
       var _t = this;
 
-      this.getIdeas();
-      this.getCategories();
+      this.checkIdeas();
+      this.checkCategories();
       setTimeout(function () {
         _t.loop();
       }, 5000);

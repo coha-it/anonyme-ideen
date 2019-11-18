@@ -8,7 +8,7 @@ use App\Idea;
 use App\Category;
 
 
-class IdeenController extends Controller
+class IdeaController extends Controller
 {
     /**
      * Retrieve the user for the given ID.
@@ -19,6 +19,14 @@ class IdeenController extends Controller
     public function index()
     {
         return view('index');
+    }
+
+    public function lastIdeaDate(Request $request) {
+        return Idea::orderBy('updated_at', 'desc')->get()->first()->updated_at;
+    }
+
+    public function lastCategoryDate(Request $request) {
+        return Category::orderBy('updated_at', 'desc')->get()->first()->updated_at;
     }
 
     public function ideas() {

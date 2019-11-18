@@ -9,7 +9,6 @@
 </head>
 <body>
     <div id="app">
-
         <div class="paper container">
             <h1>Anonyme Ideen</h1>
             <form class="form-group" @submit.prevent="submitForm">
