@@ -22,7 +22,7 @@ new Vue({
             var _t = this;
 
             axios
-                .post('/api/last-idea-date', this.form.lastIdeaDate)
+                .post('api/last-idea-date', this.form.lastIdeaDate)
                 .then(function (res) {
                     // If Changes!
                     if (res.data != _t.lastIdeaDate) _t.getIdeas();
@@ -35,7 +35,7 @@ new Vue({
             var _t = this;
 
             axios
-                .post('/api/last-category-date', this.form.lastCategoryDate)
+                .post('api/last-category-date', this.form.lastCategoryDate)
                 .then(function (res) {
                     // If Changes!
                     if (res.data != _t.lastCategoryDate) _t.getCategories();
@@ -48,7 +48,7 @@ new Vue({
             var _t = this;
 
             axios
-                .get('/api/ideas')
+                .get('api/ideas')
                 .then(function (res) {
                     _t.ideas = res.data;
                 });
@@ -57,7 +57,7 @@ new Vue({
             var _t = this;
 
             axios
-                .get('/api/categories')
+                .get('api/categories')
                 .then(function (res) {
                     _t.categories = res.data;
                 });
@@ -79,7 +79,7 @@ new Vue({
             var _t = this;
 
             axios
-                .post('/api/create-idea', this.form)
+                .post('api/create-idea', this.form)
                 .then(function(res) {
                     // Success
                     _t.setSuccess();

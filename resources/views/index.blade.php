@@ -16,7 +16,7 @@
                     <div class="xs-12 sm-12 md-6 lg-6 col-6">
                         <div class="form-group">
                         <label>Deine anonyme Idee</label>
-                        <textarea v-model="form.idea" name="idea" style="width: 100%; height: 105px;" placeholder="Irgend ein Satz, Text, Spruch oder sontwas"></textarea>
+                        <textarea v-model="form.idea" name="idea" style="width: 100%; height: 105px;" placeholder="Irgend ein Satz, Text, Spruch oder sonstwas"></textarea>
                         </div>
                     </div>
                     <div class="xs-12  sm-12 md-5 lg-5 col-5">
