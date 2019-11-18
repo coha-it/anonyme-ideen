@@ -33,7 +33,7 @@
                 </div>
             </form>
 
-            <table class="table-hover">
+            <table class="table-hover ideen-tabelle">
                 <thead>
                 <tr>
                     <th>Text</th>

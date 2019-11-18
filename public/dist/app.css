@@ -3114,3 +3114,20 @@ h1:first-of-type {
   letter-spacing: .041em;
 }
 
+.ideen-tabelle tr th,
+.ideen-tabelle tr td {
+  vertical-align: middle;
+  line-height: 1.35em;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.ideen-tabelle tr th:nth-of-type(1),
+.ideen-tabelle tr th:nth-of-type(1),
+.ideen-tabelle tr td:nth-of-type(1),
+.ideen-tabelle tr td:nth-of-type(1) {
+  font-size: 25px;
+  letter-spacing: .04em;
+  width: 100%;
+}
+
